@@ -152,6 +152,115 @@ button{-webkit-appearance:none;appearance:none;color:#f0f0f0;-webkit-text-fill-c
 .sched-nav-btn:active{background:#2a2a2a;}
 .sched-week-label{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;text-align:center;}
 .sched-week-dates{font-size:11px;color:#888;font-weight:500;text-align:center;margin-top:2px;}
+/* ── STATS TAB ── */
+.stats-period-row{display:flex;gap:8px;margin-bottom:20px;}
+.stats-period-btn{flex:1;background:#1f1f1f;border:1.5px solid #2a2a2a;color:#888;-webkit-text-fill-color:#888;border-radius:12px;padding:10px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.15s;}
+.stats-period-btn.sel{border-color:#ffffff;color:#ffffff;-webkit-text-fill-color:#ffffff;background:#1f1f1f;}
+.chart-card{background:#161616;border:1px solid #2a2a2a;border-radius:16px;padding:18px;margin-bottom:14px;}
+.chart-title{font-size:11px;color:#888;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+.heatmap-body{display:flex;justify-content:center;margin:4px 0 12px;}
+.heatmap-legend{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+.heatmap-chip{display:flex;align-items:center;gap:5px;font-size:11px;color:#888;-webkit-text-fill-color:#888;font-weight:500;}
+.heatmap-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+.pr-row{display:flex;align-items:center;gap:12px;padding:13px 16px;background:#161616;border:1px solid #2a2a2a;border-radius:14px;margin-bottom:8px;}
+.pr-row.pr-top{border-color:var(--accent);background:var(--accent-soft);}
+.pr-rank{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:#444;width:24px;flex-shrink:0;text-align:center;}
+.pr-top .pr-rank{color:var(--accent);-webkit-text-fill-color:var(--accent);}
+.pr-name{flex:1;font-size:14px;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pr-val{text-align:right;flex-shrink:0;}
+.pr-est{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:#f0f0f0;-webkit-text-fill-color:#f0f0f0;}
+.pr-top .pr-est{color:var(--accent);-webkit-text-fill-color:var(--accent);}
+.pr-sub{font-size:11px;color:#666;font-weight:500;margin-top:1px;}
+.onerm-row{display:flex;gap:10px;margin-bottom:4px;}
+.onerm-card{flex:1;background:#0f0f0f;border:1px solid #2a2a2a;border-radius:12px;padding:14px;text-align:center;}
+.onerm-val{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--accent);-webkit-text-fill-color:var(--accent);}
+.onerm-name{font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.onerm-sub{font-size:11px;color:#666;margin-top:2px;}
+/* ── SCHEDULE CHECKLIST ── */
+.sched-check-item{display:flex;align-items:center;gap:12px;background:#1f1f1f;border-radius:10px;padding:12px 14px;margin-bottom:8px;transition:opacity 0.2s;}
+.sched-check-item.done{opacity:0.45;}
+.sched-checkbox{width:22px;height:22px;border-radius:6px;border:2px solid #444;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s;padding:0;}
+.sched-checkbox.checked{background:var(--accent);border-color:var(--accent);}
+.sched-check-label{flex:1;font-size:14px;font-weight:600;transition:all 0.2s;color:#f0f0f0;-webkit-text-fill-color:#f0f0f0;}
+.sched-check-item.done .sched-check-label{text-decoration:line-through;color:#555;-webkit-text-fill-color:#555;}
+.sched-clear-confirm{background:rgba(255,68,68,0.07);border:1px solid rgba(255,68,68,0.2);border-radius:10px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+/* ── PLAN PREVIEW MODAL ── */
+.plan-preview-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.82);z-index:300;display:flex;align-items:flex-end;animation:fadeUp 0.2s ease;}
+.plan-preview-sheet{background:#161616;border-radius:24px 24px 0 0;width:100%;max-height:88vh;overflow-y:auto;padding:24px 20px calc(24px + env(safe-area-inset-bottom,16px));}
+.plan-day-preview{background:#1f1f1f;border-radius:12px;padding:14px 16px;margin-bottom:8px;}
+/* ── PERSONALIZE ── */
+.theme-toggle-row{display:flex;background:#1f1f1f;border-radius:12px;padding:4px;gap:4px;margin-bottom:20px;}
+.theme-btn{flex:1;padding:10px;border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:none;color:#666;-webkit-text-fill-color:#666;transition:all 0.2s;}
+.theme-btn.active{background:#ffffff;color:#000 !important;-webkit-text-fill-color:#000 !important;}
+.color-swatches{display:flex;gap:10px;flex-wrap:wrap;}
+.color-swatch{width:34px;height:34px;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:transform 0.15s;flex-shrink:0;outline:none;}
+.color-swatch:active{transform:scale(0.88);}
+/* ── SCHEDULE DURATION & EXTRAS ── */
+.sched-status-bar{border-radius:12px;padding:11px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.sched-status-active{background:rgba(74,158,255,0.08);border:1px solid rgba(74,158,255,0.2);}
+.sched-status-expired{background:rgba(255,68,68,0.07);border:1px solid rgba(255,68,68,0.2);}
+.sched-status-future{background:rgba(255,255,255,0.04);border:1px solid #2a2a2a;}
+.sched-status-text{font-size:12px;font-weight:600;}
+.sched-status-actions{display:flex;gap:6px;flex-shrink:0;}
+.sched-status-btn{font-size:11px;font-weight:700;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.week-progress-strip{background:#161616;border:1px solid #2a2a2a;border-radius:12px;padding:12px 16px;margin-bottom:14px;}
+.week-progress-bar-track{height:5px;background:#1f1f1f;border-radius:5px;margin-top:8px;overflow:hidden;}
+.week-progress-bar-fill{height:5px;border-radius:5px;transition:width 0.4s ease;}
+.today-shortcut{background:linear-gradient(135deg,rgba(74,158,255,0.12),rgba(74,158,255,0.06));border:1.5px solid rgba(74,158,255,0.3);border-radius:14px;padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;transition:background 0.15s;}
+.today-shortcut:active{background:rgba(74,158,255,0.18);}
+.week-inactive{background:#161616;border:1px solid #2a2a2a;border-radius:14px;padding:32px 20px;margin-bottom:14px;text-align:center;}
+.duration-chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px;}
+.dur-chip{padding:8px 16px;border:1.5px solid #2a2a2a;border-radius:20px;background:none;color:#888;-webkit-text-fill-color:#888;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.15s;}
+.dur-chip.sel{background:#fff;color:#000 !important;-webkit-text-fill-color:#000 !important;border-color:#fff;}
+/* ── LIGHT THEME ── */
+html[data-theme="light"],html[data-theme="light"] body{background:#f2f2f7 !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] #app{background:#f2f2f7 !important;}
+html[data-theme="light"] .header{background:rgba(242,242,247,0.98) !important;border-bottom-color:#ddd !important;}
+html[data-theme="light"] .logo{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .bottom-nav{background:rgba(242,242,247,0.98) !important;border-top-color:#ddd !important;}
+html[data-theme="light"] .nav-btn{color:#aaa !important;-webkit-text-fill-color:#aaa !important;}
+html[data-theme="light"] .nav-btn .nav-label{color:#aaa !important;-webkit-text-fill-color:#aaa !important;}
+html[data-theme="light"] .nav-btn.active,.nav-btn.active .nav-label{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .xp-pill{background:#e8e8ee !important;border-color:#ddd !important;}
+html[data-theme="light"] .xp-num{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .xp-streak{color:#555 !important;-webkit-text-fill-color:#555 !important;}
+html[data-theme="light"] .xp-bar-track{background:#ddd !important;}
+html[data-theme="light"] .guest-badge{background:#e8e8ee !important;border-color:#ddd !important;color:#666 !important;-webkit-text-fill-color:#666 !important;}
+html[data-theme="light"] .card{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .stat-cell{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .stat-val,.stat-key{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .workout-row{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .rival-row{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .add-friend-box{background:#fff !important;border-color:#d0d0d0 !important;}
+html[data-theme="light"] .chart-card{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .pr-row{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .onerm-card{background:#f0f0f5 !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .ex-block{background:#fff !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .level-card{background:#f5f5fa !important;border-color:#e0e0e0 !important;}
+html[data-theme="light"] .level-card.sel{border-color:#111 !important;background:#fff !important;}
+html[data-theme="light"] .stepper{background:#eee !important;border-color:#ddd !important;}
+html[data-theme="light"] .stepper-val{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .stepper-btn{color:#555 !important;-webkit-text-fill-color:#555 !important;}
+html[data-theme="light"] .text-input,.num-input{background:#fff !important;border-color:#ddd !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .cal-box{background:#fff !important;border-color:#ddd !important;}
+html[data-theme="light"] .cal-day.cur-month{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .ai-panel{background:#f2f2f7 !important;}
+html[data-theme="light"] .ai-bubble-ai{background:#fff !important;border-color:#e0e0e0 !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .ai-input{background:#eee !important;border-color:#ddd !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .plan-preview-sheet,.plan-day-preview{background:#fff !important;}
+html[data-theme="light"] .plan-day-preview{background:#f0f0f5 !important;}
+html[data-theme="light"] .sched-check-item{background:#f0f0f5 !important;}
+html[data-theme="light"] .sched-check-label{color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .theme-toggle-row{background:#e8e8ee !important;}
+html[data-theme="light"] .btn-secondary{background:#ebebf0 !important;border-color:#ddd !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .btn-outline{border-color:#ccc !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .btn-outline.sel{background:#111 !important;color:#fff !important;-webkit-text-fill-color:#fff !important;border-color:#111 !important;}
+html[data-theme="light"] .chip{background:#ebebf0 !important;border-color:#ddd !important;color:#555 !important;-webkit-text-fill-color:#555 !important;}
+html[data-theme="light"] .chip.sel{background:var(--accent) !important;border-color:var(--accent) !important;color:#fff !important;-webkit-text-fill-color:#fff !important;}
+html[data-theme="light"] .sched-nav-btn{border-color:#ddd !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .stats-period-btn{background:#ebebf0 !important;border-color:#ddd !important;color:#666 !important;-webkit-text-fill-color:#666 !important;}
+html[data-theme="light"] .stats-period-btn.sel{border-color:#111 !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
+html[data-theme="light"] .friend-chip{background:#ebebf0 !important;border-color:#ddd !important;color:#111 !important;-webkit-text-fill-color:#111 !important;}
 /* ── AI FEATURES ── */
 .suggest-badge{background:rgba(74,158,255,0.08);border:1px solid rgba(74,158,255,0.25);border-radius:10px;padding:8px 12px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;transition:background 0.15s;}
 .suggest-badge:active{background:rgba(74,158,255,0.15);}
@@ -261,6 +370,7 @@ button{-webkit-appearance:none;appearance:none;color:#f0f0f0;-webkit-text-fill-c
     <button class="nav-btn" id="nav-log" onclick="gotoTab('log')"><div class="nav-icon">💪</div><div class="nav-label">Log</div></button>
     <button class="nav-btn" id="nav-schedule" onclick="gotoTab('schedule')"><div class="nav-icon">📅</div><div class="nav-label">Plan</div></button>
     <button class="nav-btn" id="nav-rivals" onclick="gotoTab('rivals')"><div class="nav-icon">🏆</div><div class="nav-label">Rivals</div></button>
+    <button class="nav-btn" id="nav-stats" onclick="gotoTab('stats')"><div class="nav-icon">📊</div><div class="nav-label">Stats</div></button>
     <button class="nav-btn" id="nav-profile" onclick="gotoTab('profile')"><div class="nav-icon">👤</div><div class="nav-label">You</div></button>
   </nav>
 </div>
@@ -289,8 +399,8 @@ let currentUser=null;
 let isGuest=false;
 const isStandalone=window.navigator.standalone||window.matchMedia('(display-mode: standalone)').matches;
 
-function defaultData(){return{xp:0,streak:0,lastDate:null,workouts:[],schedule:emptySchedule(),checked:{},friends:[]};}
-function emptySchedule(){return['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].reduce((a,d)=>({...a,[d]:{label:'',exercises:[]}}),{});}
+function defaultData(){return{xp:0,streak:0,lastDate:null,workouts:[],schedule:emptySchedule(),checked:{},friends:[],schedChecks:{},schedStart:null,schedEnd:null};}
+function emptySchedule(){return['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].reduce((a,d)=>({...a,[d]:{label:'',exercises:[],note:''}}),{});}
 
 function switchAuthTab(t){
   document.querySelectorAll('.auth-tab').forEach((b,i)=>b.classList.toggle('active',(i===0&&t==='login')||(i===1&&t==='register')));
@@ -497,8 +607,21 @@ auth.onAuthStateChanged(async(user)=>{
 let UD,currentTab='home',building=false;
 let nw={title:'',exercises:[]};
 let editingWorkoutId=null;
+let statsPeriod='week';
 let aiChat=[],aiChatOpen=false,aiTyping=false;
 let aiGenOpen=false,aiGenPrefs={goal:'Hypertrophy',equipment:'Full Gym',intensity:'Medium'},aiGenLoading=false;
+let aiPlanPreview=null;
+let aiPlanDuration=4; // weeks, used in preview modal
+let confirmClearDay=null;
+let confirmDeleteSched=false;
+const ACCENT_COLORS=['#4a9eff','#34d399','#f59e0b','#f472b6','#a78bfa','#ef4444'];
+let prefs=JSON.parse(localStorage.getItem('mu_prefs')||'{}');
+prefs={accent:'#4a9eff',theme:'dark',...prefs};
+// Apply saved theme/color immediately (before auth loads)
+(()=>{const r=document.documentElement;r.style.setProperty('--accent',prefs.accent);r.dataset.theme=prefs.theme;})();
+// 🔑 Paste your free Gemini key from https://aistudio.google.com/app/apikey
+const GEMINI_KEY='AIzaSyD4uOSpdi1U8ZEY4HPg2JO-zIVHicoDNd8';
+const GEMINI_URL=`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
 let selCat='Push',schedTab='week',schedDay='Monday',aiLvl=null;
 let expandedW=null,addingToDay=null,schedAddCat='Push';
 let addFriendInput='',addFriendMsg='',addFriendOk=false;
@@ -523,8 +646,37 @@ const AI_PLANS={
   advanced:{Monday:{label:'Chest & Tri',exercises:[{name:'Bench Press',sets:[{reps:5,weight:110},{reps:5,weight:115},{reps:3,weight:120}]},{name:'Incline Press',sets:[{reps:8,weight:90}]},{name:'Tricep Dip',sets:[{reps:10,weight:20}]}]},Tuesday:{label:'Back & Bi',exercises:[{name:'Pull-ups',sets:[{reps:10,weight:20}]},{name:'Barbell Row',sets:[{reps:6,weight:100}]},{name:'Bicep Curl',sets:[{reps:10,weight:28}]}]},Wednesday:{label:'Leg Day',exercises:[{name:'Squat',sets:[{reps:5,weight:130},{reps:5,weight:135}]},{name:'Romanian Deadlift',sets:[{reps:8,weight:100}]},{name:'Leg Curl',sets:[{reps:12,weight:55}]}]},Thursday:{label:'Shoulders',exercises:[{name:'Shoulder Press',sets:[{reps:6,weight:80}]},{name:'Lateral Raise',sets:[{reps:20,weight:16}]},{name:'Face Pull',sets:[{reps:20,weight:20}]}]},Friday:{label:'Full Power',exercises:[{name:'Bench Press',sets:[{reps:5,weight:115}]},{name:'Barbell Row',sets:[{reps:5,weight:100}]},{name:'Squat',sets:[{reps:5,weight:130}]}]},Saturday:{label:'Cardio + Core',exercises:[{name:'Running',sets:[{reps:1,weight:0}]},{name:'Plank',sets:[{reps:3,weight:0}]},{name:'Ab Wheel',sets:[{reps:15,weight:0}]}]},Sunday:{label:'Rest',exercises:[]}}
 };
 
+// ── PREFS ──────────────────────────────────────────────────────
+function hexToRgba(hex,a){
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return`rgba(${r},${g},${b},${a})`;
+}
+function applyPrefs(){
+  const root=document.documentElement;
+  root.style.setProperty('--accent',prefs.accent);
+  root.style.setProperty('--accent-glow',hexToRgba(prefs.accent,0.25));
+  root.style.setProperty('--accent-soft',hexToRgba(prefs.accent,0.1));
+  root.dataset.theme=prefs.theme;
+}
+function savePrefs(){localStorage.setItem('mu_prefs',JSON.stringify(prefs));}
+function setTheme(t){prefs.theme=t;savePrefs();applyPrefs();render();}
+function setAccent(c){prefs.accent=c;savePrefs();applyPrefs();render();}
+function renderPersonalize(){
+  const colors=ACCENT_COLORS.map(c=>`<button class="color-swatch" style="background:${c};border-color:${prefs.accent===c?'#fff':'transparent'}" onclick="setAccent('${c}')"></button>`).join('');
+  return`<div class="card" style="margin-bottom:20px">
+    <div class="section-lbl">Personalize</div>
+    <div style="font-size:12px;color:#888;-webkit-text-fill-color:#888;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Theme</div>
+    <div class="theme-toggle-row">
+      <button class="theme-btn${prefs.theme==='dark'?' active':''}" onclick="setTheme('dark')">🌙 Dark</button>
+      <button class="theme-btn${prefs.theme==='light'?' active':''}" onclick="setTheme('light')">☀️ Light</button>
+    </div>
+    <div style="font-size:12px;color:#888;-webkit-text-fill-color:#888;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Accent Color</div>
+    <div class="color-swatches">${colors}</div>
+  </div>`;
+}
+
 // ── CORE ──────────────────────────────────────────────────────
-async function initApp(){UD=await getUserData(currentUser.uid);if(!UD.friends)UD.friends=[];updateHeader();gotoTab('home');}
+async function initApp(){UD=await getUserData(currentUser.uid);if(!UD.friends)UD.friends=[];if(!UD.schedChecks)UD.schedChecks={};if(UD.schedStart===undefined)UD.schedStart=null;if(UD.schedEnd===undefined)UD.schedEnd=null;applyPrefs();updateHeader();gotoTab('home');}
 function updateHeader(){
   document.getElementById('hdr-xp').textContent=UD.xp.toLocaleString();
   document.getElementById('hdr-streak').textContent=UD.streak;
@@ -558,7 +710,7 @@ async function gotoTab(t){
 }
 function render(){
   const c=document.getElementById('content');
-  const map={home:renderHome,log:renderLog,schedule:renderSchedule,rivals:renderRivals,profile:renderProfile};
+  const map={home:renderHome,log:renderLog,schedule:renderSchedule,rivals:renderRivals,stats:renderStats,profile:renderProfile};
   c.innerHTML=(map[currentTab]||renderHome)();
   c.classList.remove('fade');void c.offsetWidth;c.classList.add('fade');
   // AI overlays — injected outside #content so they persist across tab changes
@@ -765,6 +917,13 @@ function renderChatMessages(){
   box.scrollTop=box.scrollHeight;
 }
 async function sendAIChat(msgOverride){
+  if(GEMINI_KEY==='YOUR_GEMINI_KEY_HERE'){
+    if(aiChat.length===0||aiChat[aiChat.length-1].role==='user'){
+      aiChat.push({role:'assistant',text:'🔑 To activate your free AI coach, open index.html and paste your Gemini API key into the GEMINI_KEY variable. Get a free key at aistudio.google.com/app/apikey (takes ~60 seconds, no credit card needed).'});
+      render();
+    }
+    return;
+  }
   const input=document.getElementById('ai-input');
   const msg=msgOverride||(input&&input.value.trim());
   if(!msg||aiTyping)return;
@@ -773,18 +932,21 @@ async function sendAIChat(msgOverride){
   aiTyping=true;
   renderChatMessages();
   try{
-    const res=await fetch('/api/coach',{
+    const ctx=buildAIContext();
+    const systemPrompt=`You are an expert personal trainer and strength coach inside a fitness app called MuscleUp. You give concise, motivational, data-driven advice.\n\nUser profile:\n- Name: ${ctx.name}\n- Level: ${ctx.level} (${ctx.xp} XP total)\n- Current streak: ${ctx.streak} days\n- Total workouts logged: ${ctx.workoutCount}\n\nRecent workout history (last 5):\n${ctx.recentWorkouts||'No workouts yet.'}\n\nMuscle group distribution (% of total sets):\n${ctx.muscleBalance||'No data yet.'}\n\nRules:\n- Keep responses under 120 words unless the user asks for a detailed plan\n- Be specific — reference their actual exercises, weights, and history\n- Use encouragement but skip filler phrases like "Great question!"\n- For progressive overload, recommend specific weight/rep targets`;
+    const history=aiChat.slice(-10).map(m=>({role:m.role==='assistant'?'model':'user',parts:[{text:m.text}]}));
+    const res=await fetch(GEMINI_URL,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({type:'chat',messages:aiChat.slice(-10).map(m=>({role:m.role==='assistant'?'assistant':'user',content:m.text})),context:buildAIContext()})
+      body:JSON.stringify({
+        system_instruction:{parts:[{text:systemPrompt}]},
+        contents:history
+      })
     });
     const data=await res.json();
     aiTyping=false;
-    if(data.error==='no_key'){
-      aiChat.push({role:'assistant',text:'AI coaching requires an Anthropic API key. Add ANTHROPIC_API_KEY to your Vercel environment variables to unlock this feature.'});
-    } else {
-      aiChat.push({role:'assistant',text:data.text||'Sorry, I had trouble responding. Try again!'});
-    }
+    const text=data.candidates?.[0]?.content?.parts?.[0]?.text||'Sorry, I had trouble responding. Try again!';
+    aiChat.push({role:'assistant',text});
   }catch(e){
     aiTyping=false;
     aiChat.push({role:'assistant',text:'Connection error. Make sure you\'re online and try again.'});
@@ -828,28 +990,32 @@ function setGenPref(key,val){
   });
 }
 async function aiGenerateWorkout(){
+  if(GEMINI_KEY==='AIzaSyD4uOSpdi1U8ZEY4HPg2JO-zIVHicoDNd8'){
+    alert('🔑 Paste your free Gemini API key into the GEMINI_KEY variable in index.html. Get one at aistudio.google.com/app/apikey — no credit card needed!');
+    return;
+  }
   if(aiGenLoading)return;
   aiGenLoading=true;
   const btn=document.getElementById('ai-gen-btn');
   if(btn){btn.textContent='Generating...';btn.disabled=true;}
   try{
-    const res=await fetch('/api/coach',{
+    const ctx=buildAIContext();
+    const prompt=`You are a workout programming expert. Generate a single gym workout as valid JSON only — no markdown, no explanation, just the JSON object.\n\nUser context:\n- Level: ${ctx.level}, streak: ${ctx.streak} days\n- Recent workouts: ${ctx.recentWorkouts||'none'}\n- Muscle balance: ${ctx.muscleBalance||'none'}\n\nWorkout preferences:\n- Goal: ${aiGenPrefs.goal}\n- Equipment: ${aiGenPrefs.equipment}\n- Intensity: ${aiGenPrefs.intensity}\n\nReturn ONLY this JSON structure (no \`\`\` fences):\n{"title":"<workout name>","exercises":[{"name":"<exercise name>","sets":[{"reps":<number>,"weight":<kg as number>},...]}]}\n\nRules:\n- 4-6 exercises, 3-4 sets each\n- Exercise names must exactly match common gym exercise names\n- For Bodyweight equipment: weight = 0 for all sets\n- Vary rep ranges by goal: Strength=3-6 reps, Hypertrophy=8-12 reps, Fat Loss=12-15 reps\n- Higher intensity = more sets and heavier weight\n- Don't repeat muscle groups from the most recent workout if possible`;
+    const res=await fetch(GEMINI_URL,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({type:'generate',context:buildAIContext(),preferences:aiGenPrefs})
+      body:JSON.stringify({contents:[{role:'user',parts:[{text:prompt}]}]})
     });
     const data=await res.json();
     aiGenLoading=false;
-    if(data.error==='no_key'){
-      alert('Add ANTHROPIC_API_KEY to Vercel environment variables to use AI workout generation.');
-      if(btn){btn.textContent='Generate My Workout';btn.disabled=false;}
-      return;
-    }
-    if(data.workout){
+    const raw=data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'';
+    try{
+      const clean=raw.replace(/^```[a-z]*\n?/i,'').replace(/\n?```$/i,'').trim();
+      const workout=JSON.parse(clean);
       // Enrich with last-known weights for each exercise
       nw={
-        title:data.workout.title||aiGenPrefs.goal+' Workout',
-        exercises:data.workout.exercises.map(ex=>{
+        title:workout.title||aiGenPrefs.goal+' Workout',
+        exercises:workout.exercises.map(ex=>{
           const prev=getLastPerformance(ex.name);
           return{name:ex.name,sets:ex.sets.map(s=>({reps:s.reps||10,weight:prev?prev.weight:s.weight||0}))};
         })
@@ -857,8 +1023,10 @@ async function aiGenerateWorkout(){
       aiGenOpen=false;
       building=true;
       gotoTab('log');
-    } else {
+    }catch(parseErr){
+      aiGenLoading=false;
       if(btn){btn.textContent='Generate My Workout';btn.disabled=false;}
+      alert('Gemini returned unexpected output. Please try again.');
     }
   }catch(e){
     aiGenLoading=false;
@@ -1155,10 +1323,10 @@ function renderSchedule(){
     <button class="btn-outline${schedTab==='week'?' sel':''}" onclick="setSchedTab('week')" style="flex:1">📅 Week View</button>
     <button class="btn-outline${schedTab==='ai'?' sel':''}" onclick="setSchedTab('ai')" style="flex:1">🤖 AI Plan</button>
   </div>`;
-  if(schedTab==='ai') return subNav+renderAI();
+  if(schedTab==='ai') return subNav+renderAI()+renderAIPreviewModal();
   const mon=getWeekMonday(weekOffset);const sun=new Date(mon);sun.setDate(sun.getDate()+6);
   const today=new Date();today.setHours(0,0,0,0);
-  const weekLabel=weekOffset===0?'This Week':fmtDate(mon)+' – '+fmtDate(sun);
+  const weekLabel=weekOffset===0?'This Week':weekOffset===1?'Next Week':weekOffset===-1?'Last Week':fmtDate(mon)+' – '+fmtDate(sun);
   const weekDates=fmtDateFull(mon)+' – '+fmtDateFull(sun);
   const nav=`<div class="sched-nav">
     <button class="sched-nav-btn" onclick="changeWeek(-1)">‹</button>
@@ -1167,8 +1335,103 @@ function renderSchedule(){
       <div class="sched-week-dates">${weekDates}</div>
     </div>
     <button class="sched-nav-btn" onclick="changeWeek(1)">›</button>
-    <button class="sched-nav-btn" onclick="toggleCalendar()" style="margin-left:8px;font-size:14px">📆</button>
+    <button class="sched-nav-btn" onclick="goToThisWeek()" style="margin-left:4px;font-size:11px;font-weight:700;padding:8px 10px;font-family:'DM Sans',sans-serif" title="This week">NOW</button>
+    <button class="sched-nav-btn" onclick="toggleCalendar()" style="margin-left:4px;font-size:14px">📆</button>
   </div>`;
+
+  // ── Status bar (duration / expired / future)
+  const wStatus=getWeekStatus();
+  let statusBar='';
+  if(hasAnySchedule()||UD.schedStart){
+    if(wStatus==='expired'){
+      statusBar=`<div class="sched-status-bar sched-status-expired">
+        <div>
+          <div class="sched-status-text" style="color:#ff6b6b;-webkit-text-fill-color:#ff6b6b">⏰ Plan ended ${UD.schedEnd}</div>
+          <div style="font-size:11px;color:#888;-webkit-text-fill-color:#888;margin-top:2px">Your schedule is no longer active</div>
+        </div>
+        <div class="sched-status-actions">
+          <button class="sched-status-btn" style="background:var(--accent);color:#000;-webkit-text-fill-color:#000" onclick="renewSched()">Renew</button>
+          <button class="sched-status-btn" style="background:#2a2a2a;color:#888;-webkit-text-fill-color:#888" onclick="confirmDeleteSched=true;render()">Delete</button>
+        </div>
+      </div>`;
+    } else if(wStatus==='future'){
+      statusBar=`<div class="sched-status-bar sched-status-future">
+        <div class="sched-status-text" style="color:#888;-webkit-text-fill-color:#888">📅 Plan starts ${UD.schedStart}</div>
+        <button class="sched-status-btn" style="background:#2a2a2a;color:#aaa;-webkit-text-fill-color:#aaa" onclick="weekOffset=0;render()">Go to Start</button>
+      </div>`;
+    } else {
+      const endLabel=UD.schedEnd?`Ends ${UD.schedEnd}`:'No end date';
+      const durChips=[2,4,8,12,0].map(w=>`<button class="dur-chip" style="padding:4px 10px;font-size:11px" onclick="setSchedDuration(${w})">${w===0?'∞':w+'W'}</button>`).join('');
+      statusBar=`<div class="sched-status-bar sched-status-active">
+        <div style="flex:1;min-width:0">
+          <div class="sched-status-text" style="color:var(--accent);-webkit-text-fill-color:var(--accent)">✓ Active · ${endLabel}</div>
+          <div style="display:flex;gap:5px;margin-top:7px;flex-wrap:wrap">${durChips}</div>
+        </div>
+        <button class="sched-status-btn" style="background:rgba(255,68,68,0.1);color:#ff6b6b;-webkit-text-fill-color:#ff6b6b;align-self:flex-start" onclick="confirmDeleteSched=true;render()">Delete</button>
+      </div>`;
+    }
+  }
+  // Delete confirmation
+  const deleteConfirm=confirmDeleteSched?`<div style="background:rgba(255,68,68,0.07);border:1px solid rgba(255,68,68,0.25);border-radius:12px;padding:16px;margin-bottom:14px">
+    <div style="font-size:14px;font-weight:700;color:#ff4444;-webkit-text-fill-color:#ff4444;margin-bottom:8px">Delete entire schedule?</div>
+    <div style="font-size:12px;color:#888;-webkit-text-fill-color:#888;margin-bottom:14px">All planned exercises and dates will be removed. This cannot be undone.</div>
+    <div style="display:flex;gap:8px">
+      <button onclick="deleteSchedule()" style="background:#ff4444;color:#fff;-webkit-text-fill-color:#fff;border:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">Yes, Delete</button>
+      <button onclick="confirmDeleteSched=false;render()" style="background:#2a2a2a;color:#888;-webkit-text-fill-color:#888;border:none;border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Cancel</button>
+    </div>
+  </div>`:'';
+
+  // ── Weekly progress summary (only for active/nolimit weeks)
+  let progressStrip='';
+  if(weekOffset===0&&(wStatus==='active'||wStatus==='nolimit')){
+    const prog=getWeekProgress();
+    if(prog.total>0){
+      const pct=Math.round(prog.done/prog.total*100);
+      const color=pct===100?'var(--green)':pct>=50?'var(--accent)':'#888';
+      progressStrip=`<div class="week-progress-strip">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-size:12px;font-weight:700;color:#888;-webkit-text-fill-color:#888;letter-spacing:1px;text-transform:uppercase">This Week</div>
+          <div style="font-size:13px;font-weight:700;color:${color};-webkit-text-fill-color:${color}">${prog.done}/${prog.total} done${pct===100?' 🎉':''}</div>
+        </div>
+        <div class="week-progress-bar-track">
+          <div class="week-progress-bar-fill" style="width:${pct}%;background:${color}"></div>
+        </div>
+      </div>`;
+    }
+  }
+
+  // ── Today's Plan card (interactive checklist)
+  let todayShortcut='';
+  if(weekOffset===0){
+    const ts=getTodaySchedule();
+    if(ts&&(wStatus==='active'||wStatus==='nolimit')){
+      const dayD=UD.schedule[ts.day];
+      const dayChecked=dayD.exercises.filter((_,ei)=>isSchedChecked(ts.day,ei)).length;
+      const pct=dayD.exercises.length>0?Math.round(dayChecked/dayD.exercises.length*100):0;
+      const exItems=dayD.exercises.map((ex,ei)=>{
+        const checked=isSchedChecked(ts.day,ei);
+        const chkSvg=checked?`<svg width="11" height="11" viewBox="0 0 11 11"><polyline points="1.5,5.5 4,8.5 9.5,2" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`:'';
+        return`<button onclick="event.stopPropagation();toggleSchedCheck('${ts.day}',${ei})" style="display:inline-flex;align-items:center;gap:6px;background:${checked?'var(--accent)':'#1f1f1f'};border:1.5px solid ${checked?'var(--accent)':'#333'};border-radius:10px;padding:7px 12px;cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif">
+          <span style="width:16px;height:16px;border-radius:4px;border:2px solid ${checked?'rgba(0,0,0,0.3)':'#555'};background:${checked?'rgba(0,0,0,0.15)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0">${chkSvg}</span>
+          <span style="font-size:12px;font-weight:600;color:${checked?'#000':'#ccc'};-webkit-text-fill-color:${checked?'#000':'#ccc'}">${ex.name}</span>
+        </button>`;
+      }).join('');
+      todayShortcut=`<div style="background:linear-gradient(135deg,rgba(74,158,255,0.1),rgba(74,158,255,0.04));border:1.5px solid rgba(74,158,255,0.35);border-radius:16px;padding:16px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div>
+            <div style="font-size:10px;color:var(--accent);-webkit-text-fill-color:var(--accent);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">Today's Plan</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px">${ts.label||ts.day}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="font-size:14px;font-weight:700;color:${pct===100?'var(--green)':'var(--accent)'};-webkit-text-fill-color:${pct===100?'var(--green)':'var(--accent)'}">${dayChecked}/${ts.count}</div>
+            <button onclick="event.stopPropagation();confirmClearDay='${ts.day}';render()" style="background:rgba(255,68,68,0.08);border:1px solid rgba(255,68,68,0.25);border-radius:8px;color:#ff6b6b;-webkit-text-fill-color:#ff6b6b;cursor:pointer;padding:5px 10px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;line-height:1" title="Clear today's plan">×</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">${exItems}</div>
+        ${pct===100?`<div style="margin-top:12px;font-size:12px;color:var(--green);-webkit-text-fill-color:var(--green);font-weight:700;text-align:center">🎉 All done today!</div>`:''}
+      </div>`;
+    }
+  }
   const rows=DAYS.map((day,di)=>{
     const d=UD.schedule[day];
     const dayDate=new Date(mon);dayDate.setDate(mon.getDate()+di);
@@ -1177,23 +1440,48 @@ function renderSchedule(){
     const dateStr=dayDate.getDate()+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][dayDate.getMonth()];
     let inner='';
     if(isOpen){
-      const exList=d.exercises.map((ex,ei)=>`
-        <div style="display:flex;justify-content:space-between;align-items:center;background:#1f1f1f;border-radius:10px;padding:12px 14px;margin-bottom:8px">
-          <div style="font-size:14px;font-weight:600">${ex.name}</div>
-          <button onclick="rmExDay('${day}',${ei})" style="background:none;border:none;color:#888;cursor:pointer;font-size:18px;padding:0 4px">×</button>
-        </div>`).join('');
+      const exList=d.exercises.map((ex,ei)=>{
+        const checked=isSchedChecked(day,ei);
+        const checkmark=checked?`<svg width="12" height="12" viewBox="0 0 12 12" style="display:block"><polyline points="1.5,6 4.5,9.5 10.5,2.5" stroke="#000" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`:'';
+        return`<div class="sched-check-item${checked?' done':''}">
+          <button class="sched-checkbox${checked?' checked':''}" onclick="toggleSchedCheck('${day}',${ei})">${checkmark}</button>
+          <span class="sched-check-label">${ex.name}</span>
+          <button onclick="rmExDay('${day}',${ei})" style="background:none;border:none;color:#555;cursor:pointer;font-size:18px;padding:0 4px;-webkit-text-fill-color:#555">×</button>
+        </div>`;
+      }).join('');
+      const clearSection=confirmClearDay===day
+        ?`<div class="sched-clear-confirm">
+            <div style="font-size:13px;font-weight:700;color:#ff4444;-webkit-text-fill-color:#ff4444">Clear all exercises?</div>
+            <div style="display:flex;gap:8px">
+              <button onclick="doClearDay('${day}')" style="background:#ff4444;color:#fff;-webkit-text-fill-color:#fff;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">Clear</button>
+              <button onclick="confirmClearDay=null;render()" style="background:#2a2a2a;color:#888;-webkit-text-fill-color:#888;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Cancel</button>
+            </div>
+          </div>`
+        :'';
       let addPanel='';
       if(addingToDay===day){
         const catBtns=Object.keys(EX).map(c=>`<button class="chip${schedAddCat===c?' sel':''}" onclick="setSAC('${c}')">${c}</button>`).join('');
         const exBtns=EX[schedAddCat].map(e=>`<button class="chip" onclick="addExDay('${day}','${e}')" style="font-size:13px">${e}</button>`).join('');
         addPanel=`<div style="margin-top:12px"><div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:10px">${catBtns}</div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">${exBtns}</div><button class="btn-secondary" onclick="setAddDay(null)">Done</button></div>`;
       } else {
-        addPanel=`<button class="btn-secondary" onclick="setAddDay('${day}')" style="margin-top:8px;width:100%;justify-content:center">+ Add Exercise</button>`;
+        addPanel=`<div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn-secondary" onclick="setAddDay('${day}')" style="flex:1;justify-content:center">+ Add Exercise</button>
+          ${d.exercises.length>0?`<button onclick="confirmClearDay='${day}';render()" style="background:none;border:1.5px solid rgba(255,68,68,0.3);border-radius:12px;color:#ff4444;-webkit-text-fill-color:#ff4444;cursor:pointer;padding:13px 14px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif" title="Clear day">🗑</button>`:''}
+        </div>`;
       }
+      const checkedCount=d.exercises.filter((_,ei)=>isSchedChecked(day,ei)).length;
+      const progressBadge=d.exercises.length>0?`<div style="font-size:11px;color:${checkedCount===d.exercises.length?'var(--accent)':'#888'};-webkit-text-fill-color:${checkedCount===d.exercises.length?'var(--accent)':'#888'};font-weight:600;margin-bottom:10px">${checkedCount}/${d.exercises.length} done${checkedCount===d.exercises.length?' ✓':''}</div>`:'';
+      const noteVal=(d.note||'').replace(/"/g,'&quot;');
       inner=`<div style="padding-top:14px">
-        <input class="text-input" style="margin-bottom:12px;font-size:14px" placeholder="Label (e.g. Push Day, Rest)" value="${d.label}" oninput="updSchedLabel('${day}',this.value)"/>
-        ${exList}${addPanel}</div>`;
+        <div style="display:flex;gap:8px;margin-bottom:12px">
+          <input class="text-input" style="font-size:14px;flex:1" placeholder="Label (e.g. Push Day, Rest)" value="${d.label}" oninput="updSchedLabel('${day}',this.value)"/>
+          <button onclick="if(confirm('Mark ${day} as a rest day?')){UD.schedule['${day}']={label:'Rest',exercises:[],note:''};save();render()}" style="background:none;border:1.5px solid #2a2a2a;border-radius:12px;color:#888;-webkit-text-fill-color:#888;cursor:pointer;padding:0 12px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;flex-shrink:0" title="Mark as rest day">😴 Rest</button>
+        </div>
+        <input class="text-input" style="font-size:13px;margin-bottom:12px;color:#888;-webkit-text-fill-color:#888" placeholder="Add a note (e.g. focus on form, light day...)" value="${noteVal}" oninput="updDayNote('${day}',this.value)"/>
+        ${clearSection}${progressBadge}${exList}${addPanel}</div>`;
     }
+    const exPills=(!isOpen&&!isRest&&d.exercises.length>0)?`<div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;padding-top:10px;border-top:1px solid #222">${d.exercises.slice(0,5).map((ex,ei)=>{const chk=isSchedChecked(day,ei);return`<button onclick="event.stopPropagation();toggleSchedCheck('${day}',${ei})" style="background:${chk?'var(--accent-soft)':'#1a1a1a'};border:1px solid ${chk?'var(--accent)':'#2a2a2a'};border-radius:20px;padding:5px 11px;font-size:11px;font-weight:600;color:${chk?'var(--accent)':'#888'};-webkit-text-fill-color:${chk?'var(--accent)':'#888'};cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:4px;transition:all 0.12s">${chk?'✓ ':''}${ex.name}</button>`;}).join('')}${d.exercises.length>5?`<span style="font-size:11px;color:#555;padding:5px 4px">+${d.exercises.length-5}</span>`:''}</div>`:'';
+    const hdrClr=d.exercises.length>0&&!isRest?`<button onclick="event.stopPropagation();confirmClearDay='${day}';render()" style="background:none;border:1px solid rgba(255,68,68,0.2);border-radius:7px;color:#ff6b6b;-webkit-text-fill-color:#ff6b6b;cursor:pointer;padding:3px 8px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;flex-shrink:0;line-height:1" title="Clear day">×</button>`:'';
     return `<div style="background:#161616;border:1.5px solid ${isOpen?'#ffffff':isToday?'rgba(255,255,255,0.3)':'#2a2a2a'};border-radius:14px;padding:16px;margin-bottom:10px;opacity:${isRest&&!isOpen?0.5:1}">
       <div onclick="toggleSchedDay('${day}')" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer">
         <div style="display:flex;align-items:center;gap:12px">
@@ -1203,12 +1491,19 @@ function renderSchedule(){
         <div style="display:flex;align-items:center;gap:8px">
           ${isToday?'<span style="font-size:10px;background:rgba(255,255,255,0.1);border-radius:20px;padding:2px 8px;font-weight:600;color:#fff">TODAY</span>':''}
           ${d.exercises.length>0?`<span style="font-size:12px;color:#888;font-weight:500">${d.exercises.length} ex</span>`:''}
+          ${hdrClr}
           <span style="color:#888;font-size:16px">${isOpen?'▲':'▼'}</span>
         </div>
-      </div>${inner}</div>`;
+      </div>${exPills}${inner}</div>`;
   }).join('');
   const calModal=showCalendar?renderCalendarModal():'';
-  return subNav+nav+rows+calModal;
+  // Dim the day rows if the week is outside the active period
+  const inactiveOverlay=(wStatus==='expired'||wStatus==='future')?`<div class="week-inactive" style="opacity:${wStatus==='expired'?0.5:0.4}">
+    <div style="font-size:28px;margin-bottom:10px">${wStatus==='expired'?'⏰':'📅'}</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;margin-bottom:6px">${wStatus==='expired'?'Plan Ended':'Plan Not Started Yet'}</div>
+    <div style="font-size:13px;color:#888;-webkit-text-fill-color:#888;font-weight:500">${wStatus==='expired'?'Tap Renew above to continue':'Navigate to the week your plan starts'}</div>
+  </div>`:rows;
+  return subNav+nav+statusBar+deleteConfirm+todayShortcut+progressStrip+inactiveOverlay+calModal+renderAIPreviewModal();
 }
 function renderAI(){
   const levels=[['beginner','Beginner','2–3x / week · Full body · Great for starting out'],['intermediate','Intermediate','4–5x / week · Push / Pull / Legs split'],['advanced','Advanced','5–6x / week · High volume · Strength focus']];
@@ -1220,7 +1515,7 @@ function renderAI(){
       </div>
       <div style="font-size:13px;color:#888;font-weight:500">${d}</div>
     </div>`).join('');
-  const btn=aiLvl?`<button class="btn-primary" style="margin-top:4px" onclick="applyAI()">🤖 Generate My Plan</button>`:'';
+  const btn=aiLvl?`<button class="btn-primary" style="margin-top:4px" onclick="previewAIPlan('${aiLvl}')">👁 Preview My Plan</button>`:'';
   return`<div class="section-lbl">Choose your level</div>${cards}${btn}`;
 }
 function setSchedTab(t){schedTab=t;render();}
@@ -1232,6 +1527,121 @@ function addExDay(day,name){UD.schedule[day].exercises.push({name,sets:[{reps:10
 function rmExDay(day,ei){UD.schedule[day].exercises.splice(ei,1);save();render();}
 function updSchedLabel(day,val){UD.schedule[day].label=val;save();}
 function applyAI(){if(!aiLvl)return;UD.schedule=JSON.parse(JSON.stringify(AI_PLANS[aiLvl]));save();schedTab='week';render();}
+// ── SCHEDULE DURATION & MANAGEMENT ───────────────────────────
+function isoMonday(date){
+  const d=new Date(date);d.setHours(0,0,0,0);
+  const day=d.getDay(),diff=day===0?-6:1-day;
+  d.setDate(d.getDate()+diff);return d.toISOString().slice(0,10);
+}
+function addWeeksToISO(isoDate,weeks){
+  const d=new Date(isoDate+'T00:00:00');d.setDate(d.getDate()+weeks*7);return d.toISOString().slice(0,10);
+}
+function setSchedDuration(weeks){
+  if(!UD.schedStart)UD.schedStart=isoMonday(new Date());
+  UD.schedEnd=weeks===0?null:addWeeksToISO(UD.schedStart,weeks);
+  confirmDeleteSched=false;save();render();
+}
+function renewSched(){
+  // Extend from today's monday for the same duration (or 4 weeks default)
+  const prevDur=UD.schedStart&&UD.schedEnd?Math.round((new Date(UD.schedEnd)-new Date(UD.schedStart))/(7*24*60*60*1000)):4;
+  UD.schedStart=isoMonday(new Date());
+  UD.schedEnd=addWeeksToISO(UD.schedStart,prevDur||4);
+  weekOffset=0;save();render();
+}
+function deleteSchedule(){
+  UD.schedule=emptySchedule();UD.schedStart=null;UD.schedEnd=null;
+  UD.schedChecks={};confirmDeleteSched=false;save();render();
+}
+function hasAnySchedule(){
+  return DAYS.some(d=>UD.schedule[d].exercises.length>0||UD.schedule[d].label);
+}
+function getWeekStatus(){
+  // Returns 'active'|'expired'|'future'|'nolimit'
+  if(!UD.schedStart)return'nolimit';
+  const mon=getWeekMonday(weekOffset).toISOString().slice(0,10);
+  if(mon<UD.schedStart)return'future';
+  if(UD.schedEnd&&mon>UD.schedEnd)return'expired';
+  return'active';
+}
+function getWeekProgress(){
+  let total=0,done=0;
+  const key=getWeekKey();
+  DAYS.forEach(day=>{
+    const exs=UD.schedule[day].exercises;
+    exs.forEach((_,ei)=>{total++;if(UD.schedChecks[key+'_'+day+'_'+ei])done++;});
+  });
+  return{total,done};
+}
+function getTodaySchedule(){
+  const dayName=DAYS[new Date().getDay()===0?6:new Date().getDay()-1];
+  const d=UD.schedule[dayName];
+  return d&&d.exercises.length>0?{day:dayName,label:d.label,count:d.exercises.length}:null;
+}
+function updDayNote(day,val){UD.schedule[day].note=val;save();}
+// ── SCHEDULE CHECKLIST ────────────────────────────────────────
+function getWeekKey(){return getWeekMonday(weekOffset).toISOString().slice(0,10);}
+function toggleSchedCheck(day,ei){
+  if(!UD.schedChecks)UD.schedChecks={};
+  const k=getWeekKey()+'_'+day+'_'+ei;
+  UD.schedChecks[k]=!UD.schedChecks[k];
+  save();render();
+}
+function isSchedChecked(day,ei){return!!(UD.schedChecks&&UD.schedChecks[getWeekKey()+'_'+day+'_'+ei]);}
+function doClearDay(day){UD.schedule[day]={label:'',exercises:[]};confirmClearDay=null;save();render();}
+// ── AI PLAN PREVIEW ───────────────────────────────────────────
+function previewAIPlan(lvl){aiPlanPreview=lvl;render();}
+function closeAIPreview(){aiPlanPreview=null;render();}
+function applyAIPreview(){
+  if(!aiPlanPreview)return;
+  UD.schedule=JSON.parse(JSON.stringify(AI_PLANS[aiPlanPreview]));
+  UD.schedStart=isoMonday(new Date());
+  UD.schedEnd=aiPlanDuration===0?null:addWeeksToISO(UD.schedStart,aiPlanDuration);
+  UD.schedChecks={};
+  save();aiPlanPreview=null;schedTab='week';weekOffset=0;render();
+}
+function renderAIPreviewModal(){
+  if(!aiPlanPreview)return'';
+  const plan=AI_PLANS[aiPlanPreview];
+  const lvlLabel={beginner:'Beginner',intermediate:'Intermediate',advanced:'Advanced'}[aiPlanPreview];
+  const rows=DAYS.map(day=>{
+    const d=plan[day];
+    const exList=d.exercises&&d.exercises.length
+      ?d.exercises.map(ex=>`<div style="font-size:13px;color:#888;-webkit-text-fill-color:#888;font-weight:500;padding:2px 0">· ${ex.name}</div>`).join('')
+      :`<div style="font-size:12px;color:#555;-webkit-text-fill-color:#555">Rest day</div>`;
+    return`<div class="plan-day-preview">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:13px;font-weight:700">${day}</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:var(--accent);-webkit-text-fill-color:var(--accent)">${d.label||'Rest'}</span>
+      </div>
+      ${exList}
+    </div>`;
+  }).join('');
+  return`<div class="plan-preview-overlay" onclick="closeAIPreview()">
+    <div class="plan-preview-sheet" onclick="event.stopPropagation()">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px">${lvlLabel} Plan</div>
+          <div style="font-size:12px;color:#888;-webkit-text-fill-color:#888;margin-top:2px">Preview your weekly schedule</div>
+        </div>
+        <button onclick="closeAIPreview()" style="background:#1f1f1f;border:1px solid #333;border-radius:10px;color:#888;cursor:pointer;font-size:18px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;-webkit-text-fill-color:#888">✕</button>
+      </div>
+      ${rows}
+      <div style="margin-top:16px;margin-bottom:4px">
+        <div style="font-size:12px;color:#888;-webkit-text-fill-color:#888;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">How long do you want this plan?</div>
+        <div class="duration-chips">
+          ${[2,4,8,12,0].map(w=>`<button class="dur-chip${aiPlanDuration===w?' sel':''}" onclick="aiPlanDuration=${w};render();document.querySelector('.plan-preview-overlay').scrollTop=9999">${w===0?'No end':w+'W'}</button>`).join('')}
+        </div>
+        <div style="font-size:11px;color:#666;-webkit-text-fill-color:#666;font-weight:500">
+          ${aiPlanDuration===0?'Plan runs indefinitely':('Runs until '+new Date(Date.now()+(aiPlanDuration)*7*24*60*60*1000).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}))}
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px">
+        <button class="btn-secondary" style="flex:1" onclick="closeAIPreview()">Cancel</button>
+        <button class="btn-primary" style="flex:2" onclick="applyAIPreview()">✓ Apply This Plan</button>
+      </div>
+    </div>
+  </div>`;
+}
 
 // ── RIVALS ────────────────────────────────────────────────────
 let rivalData=[];
@@ -1337,6 +1747,223 @@ function renderRivals(){
   return`${emptyState}${challengeHTML}${addFriendSection}`;
 }
 
+// ── STATS ─────────────────────────────────────────────────────
+const MONTH_NAMES={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+function parseWorkoutDate(str){
+  if(!str)return new Date();
+  const parts=str.split(' ');
+  if(parts.length<2)return new Date();
+  return new Date(new Date().getFullYear(),MONTH_NAMES[parts[1]]||0,parseInt(parts[0])||1);
+}
+function calcVolume(w){
+  return w.exercises.reduce((a,e)=>a+e.sets.reduce((b,s)=>b+(s.weight||0)*(s.reps||0),0),0);
+}
+function getVolumeHistory(n=8){
+  return UD.workouts.slice(0,n).reverse().map(w=>({v:calcVolume(w),date:w.date,label:w.title.split(' ')[0]}));
+}
+function calc1RM(weight,reps){
+  if(!weight||!reps)return 0;
+  return Math.round(weight*(1+reps/30));
+}
+function getTopExercises(n=3){
+  const freq={};
+  for(const w of UD.workouts)
+    for(const ex of w.exercises)
+      if(ex.sets.some(s=>s.weight>0))freq[ex.name]=(freq[ex.name]||0)+1;
+  return Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,n).map(([name])=>name);
+}
+function getBest1RMHistory(name,n=6){
+  // Returns last n appearances of this exercise with best est1RM per session
+  const out=[];
+  for(const w of [...UD.workouts].reverse()){
+    const ex=w.exercises.find(e=>e.name===name);
+    if(!ex)continue;
+    const best=Math.max(...ex.sets.map(s=>calc1RM(s.weight,s.reps)));
+    if(best>0)out.push({v:best,date:w.date});
+    if(out.length>=n)break;
+  }
+  return out;
+}
+function getPRTimeline(){
+  const prs={};
+  for(const w of [...UD.workouts].reverse()){
+    for(const ex of w.exercises){
+      for(const s of ex.sets){
+        const est=calc1RM(s.weight,s.reps);
+        if(s.weight>0&&(!prs[ex.name]||est>prs[ex.name].est1RM)){
+          prs[ex.name]={weight:s.weight,reps:s.reps,est1RM:est,date:w.date,workoutTitle:w.title};
+        }
+      }
+    }
+  }
+  return Object.entries(prs).map(([name,v])=>({name,...v})).sort((a,b)=>b.est1RM-a.est1RM).slice(0,8);
+}
+function getPeriodStats(period){
+  const now=new Date();const cutoff=new Date(now);
+  cutoff.setDate(now.getDate()-(period==='month'?30:7));
+  const ws=UD.workouts.filter(w=>parseWorkoutDate(w.date)>=cutoff);
+  const days=new Set(ws.map(w=>w.date)).size;
+  const volume=ws.reduce((a,w)=>a+calcVolume(w),0);
+  const sets=ws.reduce((a,w)=>a+w.exercises.reduce((b,e)=>b+e.sets.length,0),0);
+  return{workouts:ws.length,volume:Math.round(volume/1000*10)/10,sets,days};
+}
+function svgLineChart(data,{color='#4a9eff',h=110}={}){
+  if(!data||data.length<2)return`<div style="color:#555;font-size:13px;text-align:center;padding:30px 0;line-height:1.6">Log 2+ workouts<br>to see your trend</div>`;
+  const W=320,H=h,padL=10,padR=10,padT=16,padB=24;
+  const vals=data.map(d=>d.v);
+  const min=Math.min(...vals),max=Math.max(...vals);
+  const range=max-min||1;
+  const px=i=>padL+(i/(data.length-1))*(W-padL-padR);
+  const py=v=>padT+(1-(v-min)/range)*(H-padT-padB);
+  const pts=data.map((d,i)=>`${px(i).toFixed(1)},${py(d.v).toFixed(1)}`);
+  const pathD=`M ${pts.join(' L ')}`;
+  const areaD=`M ${px(0).toFixed(1)},${H-padB} L ${pts.join(' L ')} L ${px(data.length-1).toFixed(1)},${H-padB} Z`;
+  const uid='cg'+Math.random().toString(36).slice(2,6);
+  const dots=data.map((d,i)=>{
+    const isLast=i===data.length-1;
+    return`<circle cx="${px(i).toFixed(1)}" cy="${py(d.v).toFixed(1)}" r="${isLast?5:3}" fill="${color}" opacity="${isLast?1:0.5}"/>
+    ${isLast?`<text x="${px(i).toFixed(1)}" y="${(py(d.v)-9).toFixed(1)}" fill="${color}" font-size="11" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700">${d.label||d.v}</text>`:''}`;
+  }).join('');
+  return`<svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block;overflow:visible">
+    <defs><linearGradient id="${uid}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${color}" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+    </linearGradient></defs>
+    <path d="${areaD}" fill="url(#${uid})"/>
+    <path d="${pathD}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    ${dots}
+    <text x="${padL}" y="${H}" fill="#555" font-size="10" font-family="DM Sans,sans-serif">${data[0].date}</text>
+    <text x="${W-padR}" y="${H}" fill="#555" font-size="10" font-family="DM Sans,sans-serif" text-anchor="end">${data[data.length-1].date}</text>
+  </svg>`;
+}
+function heatColor(sets){
+  if(!sets)return'#1f1f1f';
+  if(sets<=3)return'rgba(74,158,255,0.22)';
+  if(sets<=8)return'rgba(74,158,255,0.55)';
+  return'#4a9eff';
+}
+function renderMuscleHeatmap(){
+  const bal={};
+  for(const w of UD.workouts.slice(0,30)){
+    for(const ex of w.exercises){
+      const cat=getExerciseCategory(ex.name);
+      if(cat)bal[cat]=(bal[cat]||0)+ex.sets.length;
+    }
+  }
+  const c=cat=>heatColor(bal[cat]||0);
+  const lbl=cat=>`<text text-anchor="middle" font-size="8" fill="#aaa" font-family="DM Sans,sans-serif" font-weight="600">${bal[cat]||0}</text>`;
+  return`<svg viewBox="0 0 160 290" style="width:160px;height:auto">
+    <!-- Head -->
+    <ellipse cx="80" cy="22" rx="17" ry="18" fill="#2a2a2a"/>
+    <!-- Neck -->
+    <rect x="73" y="38" width="14" height="12" rx="5" fill="#2a2a2a"/>
+    <!-- L Shoulder -->
+    <ellipse cx="38" cy="64" rx="20" ry="13" fill="${c('Shoulders')}"/>
+    <!-- R Shoulder -->
+    <ellipse cx="122" cy="64" rx="20" ry="13" fill="${c('Shoulders')}"/>
+    <!-- Chest -->
+    <ellipse cx="80" cy="82" rx="30" ry="22" fill="${c('Push')}"/>
+    <!-- L Arm upper -->
+    <ellipse cx="22" cy="98" rx="12" ry="26" fill="${c('Arms')}"/>
+    <!-- R Arm upper -->
+    <ellipse cx="138" cy="98" rx="12" ry="26" fill="${c('Arms')}"/>
+    <!-- L Forearm -->
+    <ellipse cx="16" cy="145" rx="9" ry="20" fill="${c('Arms')}" opacity="0.7"/>
+    <!-- R Forearm -->
+    <ellipse cx="144" cy="145" rx="9" ry="20" fill="${c('Arms')}" opacity="0.7"/>
+    <!-- Core / Abs -->
+    <rect x="52" y="102" width="56" height="56" rx="10" fill="${c('Core')}"/>
+    <!-- Upper back stripe (Pull) — shown as darker overlay inside torso -->
+    <rect x="52" y="102" width="56" height="22" rx="10" fill="${c('Pull')}" opacity="0.6"/>
+    <!-- L Quad -->
+    <ellipse cx="62" cy="210" rx="21" ry="52" fill="${c('Legs')}"/>
+    <!-- R Quad -->
+    <ellipse cx="98" cy="210" rx="21" ry="52" fill="${c('Legs')}"/>
+    <!-- L Calf -->
+    <ellipse cx="60" cy="270" rx="13" ry="18" fill="${c('Legs')}" opacity="0.7"/>
+    <!-- R Calf -->
+    <ellipse cx="100" cy="270" rx="13" ry="18" fill="${c('Legs')}" opacity="0.7"/>
+    <!-- Labels -->
+    <text x="80" y="86" text-anchor="middle" font-size="8" fill="${bal['Push']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">CHEST</text>
+    <text x="38" y="68" text-anchor="middle" font-size="7" fill="${bal['Shoulders']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">DELT</text>
+    <text x="122" y="68" text-anchor="middle" font-size="7" fill="${bal['Shoulders']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">DELT</text>
+    <text x="22" y="100" text-anchor="middle" font-size="7" fill="${bal['Arms']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">ARM</text>
+    <text x="138" y="100" text-anchor="middle" font-size="7" fill="${bal['Arms']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">ARM</text>
+    <text x="80" y="136" text-anchor="middle" font-size="8" fill="${bal['Core']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">CORE</text>
+    <text x="80" y="113" text-anchor="middle" font-size="7" fill="${bal['Pull']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">BACK</text>
+    <text x="62" y="212" text-anchor="middle" font-size="8" fill="${bal['Legs']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">LEGS</text>
+    <text x="98" y="212" text-anchor="middle" font-size="8" fill="${bal['Legs']?'#fff':'#555'}" font-family="DM Sans,sans-serif" font-weight="700">LEGS</text>
+  </svg>`;
+}
+function renderStats(){
+  const st=getPeriodStats(statsPeriod);
+  const volHistory=getVolumeHistory(8);
+  const topEx=getTopExercises(3);
+  const prs=getPRTimeline();
+  // Volume labels
+  const volData=volHistory.map(d=>({...d,label:d.v>0?Math.round(d.v)+'kg':'0'}));
+  // 1RM cards
+  const onermCards=topEx.length?topEx.map(name=>{
+    const hist=getBest1RMHistory(name,6);
+    const best=hist.length?Math.max(...hist.map(d=>d.v)):0;
+    const prev=getLastPerformance(name);
+    const sub=prev?`${prev.weight}kg × ${prev.reps}`:'';
+    const spark=hist.length>=2?svgLineChart(hist,{color:'#4a9eff',h:60}):'';
+    return`<div class="onerm-card">
+      <div class="onerm-val">${best||'—'}</div>
+      <div class="onerm-name">${name}</div>
+      ${sub?`<div class="onerm-sub">${sub}</div>`:''}
+      ${spark?`<div style="margin-top:8px">${spark}</div>`:''}
+    </div>`;
+  }).join(''):`<div style="color:#555;font-size:13px;padding:20px 0;text-align:center">Log weighted exercises to track 1RM</div>`;
+  // PR list
+  const prHTML=prs.length?prs.map((p,i)=>`
+    <div class="pr-row${i===0?' pr-top':''}">
+      <div class="pr-rank">${i+1}</div>
+      <div style="flex:1;min-width:0">
+        <div class="pr-name">${p.name}</div>
+        <div style="font-size:11px;color:#666;margin-top:1px">${p.date} · ${p.workoutTitle}</div>
+      </div>
+      <div class="pr-val">
+        <div class="pr-est">~${p.est1RM} kg</div>
+        <div class="pr-sub">${p.weight}kg × ${p.reps}</div>
+      </div>
+    </div>`).join(''):`<div style="color:#555;font-size:13px;padding:20px;text-align:center">Log weighted exercises to see your PRs</div>`;
+  // Volume label for summary
+  const volLabel=st.volume>=1?`${st.volume}t`:st.volume>0?`${Math.round(st.volume*1000)}kg`:'0kg';
+  return`
+    <div class="stats-period-row">
+      <button class="stats-period-btn${statsPeriod==='week'?' sel':''}" onclick="statsPeriod='week';render()">This Week</button>
+      <button class="stats-period-btn${statsPeriod==='month'?' sel':''}" onclick="statsPeriod='month';render()">This Month</button>
+    </div>
+    <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
+      <div class="stat-cell"><div class="stat-val">${st.workouts}</div><div class="stat-key">Sessions</div></div>
+      <div class="stat-cell"><div class="stat-val">${st.volume>0?st.volume+'t':'0'}</div><div class="stat-key">Volume</div></div>
+      <div class="stat-cell"><div class="stat-val">${st.sets}</div><div class="stat-key">Sets</div></div>
+      <div class="stat-cell"><div class="stat-val">${st.days}</div><div class="stat-key">Days</div></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Volume Trend (last 8 sessions)</div>
+      ${svgLineChart(volData)}
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Estimated 1RM — Top Lifts</div>
+      <div class="onerm-row">${onermCards}</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Muscle Heatmap — last 30 sessions</div>
+      <div class="heatmap-body">${renderMuscleHeatmap()}</div>
+      <div class="heatmap-legend">
+        <div class="heatmap-chip"><div class="heatmap-dot" style="background:#1f1f1f;border:1px solid #333"></div>None</div>
+        <div class="heatmap-chip"><div class="heatmap-dot" style="background:rgba(74,158,255,0.22)"></div>1–3 sets</div>
+        <div class="heatmap-chip"><div class="heatmap-dot" style="background:rgba(74,158,255,0.55)"></div>4–8 sets</div>
+        <div class="heatmap-chip"><div class="heatmap-dot" style="background:#4a9eff"></div>9+ sets</div>
+      </div>
+    </div>
+    <div class="section-lbl">PR Timeline — Est. 1RM</div>
+    ${prHTML}`;
+}
+
 // ── PROFILE ───────────────────────────────────────────────────
 function renderProfile(){
   const totalSets=UD.workouts.flatMap(w=>w.exercises).flatMap(e=>e.sets).length;
@@ -1376,6 +2003,7 @@ function renderProfile(){
       <div style="font-size:13px;color:#888;font-weight:500">Level ${level} · ${UD.xp.toLocaleString()} XP total</div>
       ${usernameInfo}
     </div>
+    ${renderPersonalize()}
     ${guestPrompt}
     <div class="stat-grid" style="margin-bottom:24px">
       <div class="stat-cell"><div class="stat-val">${UD.workouts.length}</div><div class="stat-key">Workouts</div></div>

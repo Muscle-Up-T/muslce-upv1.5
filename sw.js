@@ -1,4 +1,4 @@
-const CACHE='muscleup-v2';
+const CACHE='muscleup-v7';
 const ASSETS=['/','/index.html','/manifest.json'];
 
 self.addEventListener('install',e=>{
