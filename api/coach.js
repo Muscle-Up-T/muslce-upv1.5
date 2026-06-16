@@ -1,7 +1,7 @@
 // /api/coach.js — Gemini proxy (set GEMINI_KEY in Vercel env vars)
 
 const GEMINI_URL = (key) =>
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`;
 
 const SYSTEM_CHAT = (ctx) => `You are an expert personal trainer and strength coach inside a fitness app called MuscleUp. You give concise, motivational, data-driven advice.
 
