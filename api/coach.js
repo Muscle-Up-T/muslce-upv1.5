@@ -95,7 +95,8 @@ module.exports = async (req, res) => {
       }),
     });
     const data = await resp.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I had trouble responding. Try again!';
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!text) return res.json({ error: 'gemini_error', raw: data });
     return res.json({ text });
 
   } catch (err) {
