@@ -619,9 +619,7 @@ let prefs=JSON.parse(localStorage.getItem('mu_prefs')||'{}');
 prefs={accent:'#4a9eff',theme:'dark',...prefs};
 // Apply saved theme/color immediately (before auth loads)
 (()=>{const r=document.documentElement;r.style.setProperty('--accent',prefs.accent);r.dataset.theme=prefs.theme;})();
-// 🔑 Paste your free Gemini key from https://aistudio.google.com/app/apikey
-const GEMINI_KEY='AIzaSyD4uOSpdi1U8ZEY4HPg2JO-zIVHicoDNd8';
-const GEMINI_URL=`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
+// AI calls go through /api/coach (key stored in Vercel env vars)
 let selCat='Push',schedTab='week',schedDay='Monday',aiLvl=null;
 let expandedW=null,addingToDay=null,schedAddCat='Push';
 let addFriendInput='',addFriendMsg='',addFriendOk=false;
@@ -917,13 +915,6 @@ function renderChatMessages(){
   box.scrollTop=box.scrollHeight;
 }
 async function sendAIChat(msgOverride){
-  if(GEMINI_KEY==='YOUR_GEMINI_KEY_HERE'){
-    if(aiChat.length===0||aiChat[aiChat.length-1].role==='user'){
-      aiChat.push({role:'assistant',text:'🔑 To activate your free AI coach, open index.html and paste your Gemini API key into the GEMINI_KEY variable. Get a free key at aistudio.google.com/app/apikey (takes ~60 seconds, no credit card needed).'});
-      render();
-    }
-    return;
-  }
   const input=document.getElementById('ai-input');
   const msg=msgOverride||(input&&input.value.trim());
   if(!msg||aiTyping)return;
@@ -933,19 +924,15 @@ async function sendAIChat(msgOverride){
   renderChatMessages();
   try{
     const ctx=buildAIContext();
-    const systemPrompt=`You are an expert personal trainer and strength coach inside a fitness app called MuscleUp. You give concise, motivational, data-driven advice.\n\nUser profile:\n- Name: ${ctx.name}\n- Level: ${ctx.level} (${ctx.xp} XP total)\n- Current streak: ${ctx.streak} days\n- Total workouts logged: ${ctx.workoutCount}\n\nRecent workout history (last 5):\n${ctx.recentWorkouts||'No workouts yet.'}\n\nMuscle group distribution (% of total sets):\n${ctx.muscleBalance||'No data yet.'}\n\nRules:\n- Keep responses under 120 words unless the user asks for a detailed plan\n- Be specific — reference their actual exercises, weights, and history\n- Use encouragement but skip filler phrases like "Great question!"\n- For progressive overload, recommend specific weight/rep targets`;
     const history=aiChat.slice(-10).map(m=>({role:m.role==='assistant'?'model':'user',parts:[{text:m.text}]}));
-    const res=await fetch(GEMINI_URL,{
+    const res=await fetch('/api/coach',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        system_instruction:{parts:[{text:systemPrompt}]},
-        contents:history
-      })
+      body:JSON.stringify({type:'chat',messages:history,context:ctx})
     });
     const data=await res.json();
     aiTyping=false;
-    const text=data.candidates?.[0]?.content?.parts?.[0]?.text||'Sorry, I had trouble responding. Try again!';
+    const text=data.text||'Sorry, I had trouble responding. Try again!';
     aiChat.push({role:'assistant',text});
   }catch(e){
     aiTyping=false;
@@ -990,28 +977,22 @@ function setGenPref(key,val){
   });
 }
 async function aiGenerateWorkout(){
-  if(GEMINI_KEY==='AIzaSyD4uOSpdi1U8ZEY4HPg2JO-zIVHicoDNd8'){
-    alert('🔑 Paste your free Gemini API key into the GEMINI_KEY variable in index.html. Get one at aistudio.google.com/app/apikey — no credit card needed!');
-    return;
-  }
   if(aiGenLoading)return;
   aiGenLoading=true;
   const btn=document.getElementById('ai-gen-btn');
   if(btn){btn.textContent='Generating...';btn.disabled=true;}
   try{
     const ctx=buildAIContext();
-    const prompt=`You are a workout programming expert. Generate a single gym workout as valid JSON only — no markdown, no explanation, just the JSON object.\n\nUser context:\n- Level: ${ctx.level}, streak: ${ctx.streak} days\n- Recent workouts: ${ctx.recentWorkouts||'none'}\n- Muscle balance: ${ctx.muscleBalance||'none'}\n\nWorkout preferences:\n- Goal: ${aiGenPrefs.goal}\n- Equipment: ${aiGenPrefs.equipment}\n- Intensity: ${aiGenPrefs.intensity}\n\nReturn ONLY this JSON structure (no \`\`\` fences):\n{"title":"<workout name>","exercises":[{"name":"<exercise name>","sets":[{"reps":<number>,"weight":<kg as number>},...]}]}\n\nRules:\n- 4-6 exercises, 3-4 sets each\n- Exercise names must exactly match common gym exercise names\n- For Bodyweight equipment: weight = 0 for all sets\n- Vary rep ranges by goal: Strength=3-6 reps, Hypertrophy=8-12 reps, Fat Loss=12-15 reps\n- Higher intensity = more sets and heavier weight\n- Don't repeat muscle groups from the most recent workout if possible`;
-    const res=await fetch(GEMINI_URL,{
+    const res=await fetch('/api/coach',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({contents:[{role:'user',parts:[{text:prompt}]}]})
+      body:JSON.stringify({type:'generate',context:ctx,preferences:aiGenPrefs})
     });
     const data=await res.json();
     aiGenLoading=false;
-    const raw=data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'';
+    const workout=data.workout;
     try{
-      const clean=raw.replace(/^```[a-z]*\n?/i,'').replace(/\n?```$/i,'').trim();
-      const workout=JSON.parse(clean);
+      if(!workout)throw new Error('no workout');
       // Enrich with last-known weights for each exercise
       nw={
         title:workout.title||aiGenPrefs.goal+' Workout',

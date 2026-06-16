@@ -1,5 +1,7 @@
-// /api/coach.js — AI Coach serverless function
-// Set ANTHROPIC_API_KEY in Vercel environment variables to activate
+// /api/coach.js — Gemini proxy (set GEMINI_KEY in Vercel env vars)
+
+const GEMINI_URL = (key) =>
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
 
 const SYSTEM_CHAT = (ctx) => `You are an expert personal trainer and strength coach inside a fitness app called MuscleUp. You give concise, motivational, data-driven advice.
 
@@ -51,7 +53,7 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
 
-  const key = process.env.ANTHROPIC_API_KEY;
+  const key = process.env.GEMINI_KEY;
   if (!key) return res.status(200).json({ error: 'no_key' });
 
   const { type, messages, context, preferences } = req.body || {};
@@ -59,24 +61,18 @@ module.exports = async (req, res) => {
 
   try {
     if (type === 'generate') {
-      const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      const systemPrompt = SYSTEM_GENERATE(context, preferences || {});
+      const resp = await fetch(GEMINI_URL(key), {
         method: 'POST',
-        headers: {
-          'anthropic-version': '2023-06-01',
-          'x-api-key': key,
-          'content-type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-haiku-4-5-20251001',
-          max_tokens: 1024,
-          system: SYSTEM_GENERATE(context, preferences || {}),
-          messages: [{ role: 'user', content: 'Generate my workout now.' }],
+          system_instruction: { parts: [{ text: systemPrompt }] },
+          contents: [{ role: 'user', parts: [{ text: 'Generate my workout now.' }] }],
         }),
       });
       const data = await resp.json();
-      const raw = data.content?.[0]?.text?.trim() || '';
+      const raw = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
       try {
-        // Strip any accidental markdown fences
         const clean = raw.replace(/^```[a-z]*\n?/i, '').replace(/\n?```$/i, '').trim();
         const workout = JSON.parse(clean);
         return res.json({ workout });
@@ -89,22 +85,17 @@ module.exports = async (req, res) => {
     if (!Array.isArray(messages) || !messages.length) {
       return res.status(400).json({ error: 'bad_request' });
     }
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const systemPrompt = SYSTEM_CHAT(context);
+    const resp = await fetch(GEMINI_URL(key), {
       method: 'POST',
-      headers: {
-        'anthropic-version': '2023-06-01',
-        'x-api-key': key,
-        'content-type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 512,
-        system: SYSTEM_CHAT(context),
-        messages,
+        system_instruction: { parts: [{ text: systemPrompt }] },
+        contents: messages,
       }),
     });
     const data = await resp.json();
-    const text = data.content?.[0]?.text || 'Sorry, I had trouble responding. Try again!';
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I had trouble responding. Try again!';
     return res.json({ text });
 
   } catch (err) {
